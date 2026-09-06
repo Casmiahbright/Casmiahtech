@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASMIAH COMPUTER TECHNOLOGY</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    line-height:1.6;
+}
+
+/* Header */
+header{
+    background:#034ab6;
+    color:white;
+    padding:15px 50px;
+    position:sticky;
+    top:0;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+
+}
+
+nav ul li a:hover{
+    color:#00c3ff;
+    
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)),
+    url('cas.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#00c3ff;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#0099cc;
+}
+
+/* Services */
+.services{
+    padding:80px 10%;
+    text-align:center;
+    background:#f4f4f4;
+}
+
+.services h2{
+    margin-bottom:40px;
+    color:#0a192f;
+}
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+}
+
+.service-box{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.service-box:hover{
+    transform:translateY(-15px);
+
+}
+
+.service-box h3{
+    color:#00a8e8;
+    margin-bottom:15px;
+    
+}
+
+/* About */
+.about{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.about h2{
+    margin-bottom:20px;
+    color:#0a192f;
+}
+
+/* Contact */
+.contact{
+    background:#0a192f;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.contact h2{
+    margin-bottom:20px;
+}
+
+/* Footer */
+footer{
+    background:#06101f;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">CASMIAH COMPUTER TECHNOLOGY</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Innovative Technology Solutions</h1>
+            <p>
+                We provide professional Web Development, Data Analysis,
+                Cyber Security, Software Development, IT Consulting,
+                Computer Training, and Digital Solutions for businesses and individuals.
+            </p>
+            <a href="#services" class="btn">Explore Services</a>
+            <a href="LOGIN PAGE.html" class="btn">Signup / Login</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+            <div class="service-box">
+                <h3>Web Development</h3>
+                <p>Responsive websites and web applications tailored to your business needs.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Data Analysis</h3>
+                <p>Transforming raw data into valuable insights for better decision-making.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Cyber Security</h3>
+                <p>Protecting systems, networks, and data from cyber threats and attacks.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Software Development</h3>
+                <p>Custom software solutions to improve productivity and efficiency.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Computer Training</h3>
+                <p>Professional training programs in ICT, programming, and digital skills.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>IT Consulting</h3>
+                <p>Expert advice and solutions to help your business leverage technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>
+            CASMIAH COMPUTER TECHNOLOGY is committed to delivering
+            innovative, reliable, and affordable technology solutions.
+            Our goal is to help businesses and individuals achieve
+            success through modern digital technologies.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@casmiahtech.com</p>
+        <p>Phone: +234 9152 024 039</p>
+        <p>Address: Calabar, Nigeria</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 CASMIAH COMPUTER TECHNOLOGY. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

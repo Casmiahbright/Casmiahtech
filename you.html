@@ -1,0 +1,135 @@
+<form id="loginForm">
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button type="submit">Login</button>
+</form>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const response = await fetch("/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value
+    })
+  });
+
+  const data = await response.json();
+
+  if (data.success) {
+    window.location.href = data.redirect;
+  } else {
+    alert(data.message);
+  }
+});
+</script>
+
+<script>
+const express = require("express");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(
+  session({
+    secret: "studentPortalSecret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+// Sample Student Data
+const students = [
+  {
+    id: 1,
+    username: "john123",
+    password: "12345",
+    name: "John Doe",
+    matricNo: "CSC/2023/001",
+    department: "Computer Science",
+    level: "300",
+    gpa: "4.25",
+    courses: [
+      "Web Development",
+      "Data Structures",
+      "Database Systems",
+      "Cyber Security"
+    ]
+  }
+];
+
+// Login Route
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+
+  const student = students.find(
+    (s) => s.username === username && s.password === password
+  );
+
+  if (!student) {
+    return res.status(401).json({
+      success: false,
+      message: "Invalid Username or Password",
+    });
+  }
+
+  req.session.student = student;
+
+  res.json({
+    success: true,
+    message: "Login Successful",
+    redirect: "/dashboard",
+  });
+});
+
+// Student Dashboard Route
+app.get("/dashboard", (req, res) => {
+  if (!req.session.student) {
+    return res.status(401).json({
+      success: false,
+      message: "Please login first",
+    });
+  }
+
+  const student = req.session.student;
+
+  res.json({
+    success: true,
+    studentDashboard: {
+      name: student.name,
+      matricNo: student.matricNo,
+      department: student.department,
+      level: student.level,
+      gpa: student.gpa,
+      courses: student.courses,
+      notifications: [
+        "Course Registration closes next week",
+        "Second Semester Exams start on July 15",
+        "School fees payment portal is open"
+      ]
+    }
+  });
+});
+
+// Logout Route
+app.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.json({
+    success: true,
+    message: "Logged out successfully",
+  });
+});
+
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
+</script>

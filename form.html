@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+    <title>Working on forms</title>
+
+    <style>
+  
+        h1{
+            font-family: Mistral;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        form{
+            justify-self: center;
+            background-color: aqua;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            width: 500px;
+        }
+        input{
+            width: 70%;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+      .submit{
+        width:100%;
+        padding:12px;
+        border:none;
+        background:#007bff;
+        color:white;
+        font-size:16px;
+        border-radius:5px;
+        cursor:pointer;
+    }
+
+    .btn:hover{
+        background:#0056b3;
+    }
+    </style>
+</head>
+<body>
+    <form >
+        <h1>FILL THE FORM BELOW</h1>
+
+        <!--    forms -->
+        <label for="firstname">First Name:</label>
+        <input type="text" placeholder="Enter your First Name" required><br><br>
+
+        <label for="surname">Surname:</label>
+        <input type="text" placeholder="Enter your Surname" required><br><br>
+
+        <label for="username">User Name:</label>
+        <input type="text" placeholder="Enter your User Name" required><br><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" placeholder="Enter your Email Address" required><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="number" placeholder="Enter your Phone Number" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Enter your password" required><br><br>
+
+        <label for="confirm Password" >Confirm Passowrd:</label>
+        <input type="password" placeholder="Confirm password" required> <br><br>
+
+        <label for="gender">Select your Gender</label><br><br>
+        <input type="radio" id="Male" name="gender">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender">
+        <label for="female">Female</label>
+
+        <input type="radio" id="Other" name="gender">
+        <label for="other">Rather not to say</label><br><br>
+
+        <label for="country">Select your Country:</label>
+        <select name="country" id="Country" required>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Ghana">Ghana</option>
+        <option value="USA">USA</option>
+        <option value="Cameroon">Cameroon</option>
+        <option value="China">China</option>
+        <option value="UK">UK</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Spain">Spain</option>
+        <option value="France">France</option>
+        <option value="india">India</option>
+        </select>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
